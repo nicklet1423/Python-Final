@@ -8,10 +8,18 @@
 #-- Importing Functions --#
 import utils
 from Lamborghini import Lamborghini
+from rich.console import Console
+from rich.panel import Panel
+console = Console()
 
 def main():
     #Printing title
-    print(utils.title("Lamborghini's In Nebraska"))
+    console.print(
+    Panel.fit(
+        " 🏁Lamborghini's In Nebraska 🏎️ ",
+        style="bold yellow",
+        subtitle="By Lamborghini Incorporated")
+)
     # Naming the class
     cessna = Lamborghini()
     choice = Lamborghini.getSpeed
@@ -20,18 +28,19 @@ def main():
     (cessna.setColor(input("What color of Lamborghini would you like: ")))
 
     print(cessna.getLuxury())
+    console.print(f"Levels of Interior Luxury: [bold yellow][Lv1][/], [bold yellow][Lv2][/], [bold yellow][Lv3][/]")
     (cessna.setLuxury(input("What level of Luxury would you like: ")))
 
     
     (cessna.setYear(utils.get_int("What Year would you like: ")))
 
     
-    (cessna.addSpeedLimit(utils.get_int("What would you like your speed limit to be: ")))         #2222
+    (cessna.addSpeedLimit(utils.get_int("What would you like your speed limit to be: ")))
 
 
 
     #Printing out the inputs
-    print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+    console.print(f"Your [bold {cessna._color}]{cessna.getLuxury()}[/] [bold {cessna._color}]{cessna.getYear()}[/] [bold {cessna._color}]{cessna.getColor()}[/] Lamborghini is going [bold {cessna._color}]{cessna.getSpeed()}[/] mph.")
     
 
     while choice:
@@ -40,21 +49,21 @@ def main():
 
         if choice == "a":
             cessna.addSpeed()
-            print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+            console.print(f"Your [bold {cessna._color}]{cessna.getLuxury()}[/] [bold {cessna._color}]{cessna.getYear()}[/] [bold {cessna._color}]{cessna.getColor()}[/] Lamborghini is going [bold {cessna._color}]{cessna.getSpeed()}[/] mph.")
             continue
 
         elif choice == "b":
             cessna.removeSpeed()
-            print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+            console.print(f"Your [bold {cessna._color}]{cessna.getLuxury()}[/] [bold {cessna._color}]{cessna.getYear()}[/] [bold {cessna._color}]{cessna.getColor()}[/] Lamborghini is going [bold {cessna._color}]{cessna.getSpeed()}[/] mph.")
             continue
 
         elif choice == "t":
             cessna.takeoff()
-            print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+            console.print(f"Your [bold {cessna._color}]{cessna.getLuxury()}[/] [bold {cessna._color}]{cessna.getYear()}[/] [bold {cessna._color}]{cessna.getColor()}[/] Lamborghini is going [bold {cessna._color}]{cessna.getSpeed()}[/] mph.")
 
         elif choice == "f":
             cessna.fly()
-            print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+            console.print(f"Your [bold {cessna._color}]{cessna.getLuxury()}[/] [bold {cessna._color}]{cessna.getYear()}[/] [bold {cessna._color}]{cessna.getColor()}[/] Lamborghini is going [bold {cessna._color}]{cessna.getSpeed()}[/] mph.")
 
         else:
             break

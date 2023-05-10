@@ -1,11 +1,15 @@
 #----importing------#
 import sys
+from rich.console import Console
+from rich.panel import Panel
+console = Console()
+
 class Lamborghini():
     #-----------------------Functions-------------------------#
     def __init__(self):
         self._color = " "
         self._speed = 50
-        self._luxury = "\nLevels of Interior Luxury: [Lv1], [Lv2], [Lv3]"
+        self._luxury = ""
         self._year = 0
         self._speedlimit = 0
 
@@ -62,7 +66,7 @@ class Lamborghini():
                 return [self._speed]
             else:
                 self._speed >= self._speedlimit
-                print(f"You are stopped by police, You have went to jail for exceeding {self._speedlimit} mph.")
+                print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
     #---------------Flying Mode-----------------------------#
     def fly(self):
@@ -72,5 +76,5 @@ class Lamborghini():
                 return [self._speed]
             else:
                 self._speed >= self._speedlimit
-                print(f"You got stopped by the Galactic Federation of space, You have went to jail for exceeding {self._speedlimit} mph.")
+                console.print(f"You got stopped by the [bold {self._color}]Galactic Federation[/] of space, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
