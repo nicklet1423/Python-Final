@@ -52,6 +52,10 @@ def main():
             cessna.takeoff()
             print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
 
+        elif choice == "f":
+            cessna.fly()
+            print(f"The {cessna.getLuxury()} {cessna.getYear()} {cessna.getColor()} Lamborghini is going {cessna.getSpeed()} mph.")
+
         else:
             break
 

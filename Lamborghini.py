@@ -17,23 +17,10 @@ class Lamborghini():
                 return [self._speed]
             else:
                 self._speed >= self._speedlimit
-                print("You are stopped by police.")
+                print(f"You are stopped by police, You have went to jail for exceeding {self._speedlimit} mph.")
                 sys.exit()
                 
 
-                
-
-
-
-
-
-            #if  self._speed = speed
-                #self._speed < self._speedlimit:
-                #self._speed += 50
-            #else:
-                #self._speed = self._speedlimit
-                #print("You have crashed and died.")
-            #exit()
             
     def getSpeed(self):
         while True:
@@ -69,4 +56,21 @@ class Lamborghini():
         speedlimit + 100
     #---------------Nitro Mode---------------------#
     def takeoff(self):
-        self._speed + 100
+        while True:
+            self._speed = self._speed + 100
+            if self._speed < self._speedlimit:
+                return [self._speed]
+            else:
+                self._speed >= self._speedlimit
+                print(f"You are stopped by police, You have went to jail for exceeding {self._speedlimit} mph.")
+                sys.exit()
+    #---------------Flying Mode-----------------------------#
+    def fly(self):
+        while True:
+            self._speed = self._speed + 600
+            if self._speed < self._speedlimit:
+                return [self._speed]
+            else:
+                self._speed >= self._speedlimit
+                print(f"You got stopped by the Galactic Federation of space, You have went to jail for exceeding {self._speedlimit} mph.")
+                sys.exit()
