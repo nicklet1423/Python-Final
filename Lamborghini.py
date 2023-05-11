@@ -21,7 +21,7 @@ class Lamborghini():
                 return [self._speed]
             else:
                 self._speed >= self._speedlimit
-                print(f"You are stopped by police, You have went to jail for exceeding {self._speedlimit} mph.")
+                console.print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
                 
 
