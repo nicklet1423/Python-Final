@@ -66,7 +66,7 @@ class Lamborghini():
                 return [self._speed]
             else:
                 self._speed >= self._speedlimit
-                print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
+                console.print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
     #---------------Flying Mode and if it goes above the speed limit-----------------------------#
     def fly(self):
