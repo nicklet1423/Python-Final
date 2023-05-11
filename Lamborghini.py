@@ -1,5 +1,6 @@
-#----importing------#
+#----importing sys------#
 import sys
+#------importing for color----#
 from rich.console import Console
 from rich.panel import Panel
 console = Console()
@@ -13,7 +14,7 @@ class Lamborghini():
         self._year = 0
         self._speedlimit = 0
 
-    #-------Adding Speed, Grabbing Speed, Removing Speed-------#
+    #-------Adding Speed and if they also exceed the speedlimit-------#
     def addSpeed(self):
         while True:
             self._speed = self._speed + 50
@@ -23,18 +24,17 @@ class Lamborghini():
                 self._speed >= self._speedlimit
                 console.print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
-                
-
-            
+    #-----Grabbing Speed and also if it goes under 0 mph---------#
     def getSpeed(self):
         while True:
             if self._speed <= 0:
-                print("You are at a complete stop.")
+                console.print(f"[bold {self._color}]You are at a complete stop.[/]")
+                console.print(f"[bold {self._color}]Thank you for test driving Lamborghini's inventory![/]")
                 sys.exit()
             else:  
                 self._speed = self._speed + 0
             return self._speed
-    
+    #-----------Removing Speed-----------#
     def removeSpeed(self):
         self._speed -= 50
     #-------------------COLOR------------------------#
@@ -58,7 +58,7 @@ class Lamborghini():
     def addSpeedLimit(self, speedlimit):
         self._speedlimit = speedlimit
         speedlimit + 100
-    #---------------Nitro Mode---------------------#
+    #---------------takeoff Mode and if it goes above the speedlimit---------------------#
     def takeoff(self):
         while True:
             self._speed = self._speed + 100
@@ -68,7 +68,7 @@ class Lamborghini():
                 self._speed >= self._speedlimit
                 print(f"You are stopped by police, You have went to jail👮 for exceeding [bold {self._color}]{self._speedlimit}[/] mph.")
                 sys.exit()
-    #---------------Flying Mode-----------------------------#
+    #---------------Flying Mode and if it goes above the speed limit-----------------------------#
     def fly(self):
         while True:
             self._speed = self._speed + 600
